@@ -1,0 +1,99 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Dojo Survey 3</h1>
+    <h3>(version w/Models & Validations)</h3>
+</div>
+<body>
+    <div class="container">
+        <div class="col-sm">
+            <div id="main_box">
+                <div class="card w-100">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="header">
+                                <h1>Survey</h1>
+                            </div>
+                        </div>
+                        @model Survey
+                        <form asp-action="Process" asp-controller="Home" method="post">
+                            <div class="row">
+                                <div class="col-sm">
+                                    <div id="left_box">
+                                        <div class="form-group">
+                                            <div>
+                                                <label asp-for="Name">Your Name:</label>
+                                            </div>
+                                            <div>
+                                                <label asp-for="Location">Dojo Location:</label>
+                                            </div>
+                                            <div>
+                                                <label asp-for="Language">Favorite Language:</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm">
+                                    <div id="right_box">
+                                        <div class="form-group">
+                                            <div>
+                                                <input class="form-control" type="text" asp-for="Name">
+                                                <div class="row text-danger">
+                                                    <span asp-validation-for="Name"></span>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <select class="form-control" asp-for="Location">
+                                                    <option value=""></option>
+                                                    <option value="Chicago">Chicago</option>
+                                                    <option value="Seattle">Seattle</option>
+                                                    <option value="Los Angeles">Los Angeles</option>
+                                                    <option value="New York">New York</option>
+                                                    <option value="San Francisco">San Francisco</option>
+                                                </select>
+                                                <div class="row text-danger">
+                                                    <span asp-validation-for="Location"></span>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <select class="form-control" asp-for="Language">
+                                                    <option value=""></option>
+                                                    <option value="Python">Python</option>
+                                                    <option value="C#">C#</option>
+                                                    <option value="Ruby">Ruby</option>
+                                                    <option value="HTML">HTML</option>
+                                                    <option value="CSS">CSS</option>
+                                                </select>
+                                                <div class="row text-danger">
+                                                    <span asp-validation-for="Language"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div>
+                                    <div class="form-group">
+                                        <div id="text_area">
+                                            <label asp-for="Comments">Comment (optional):</label>
+                                            <textarea class="form-control" asp-for="Comments" rows="3" cols="98"></textarea>
+                                            <div class="row text-danger">
+                                                <span asp-validation-for="Comments"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="button">
+                                        <a href="" class="btn btn-primary"><input type="submit"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

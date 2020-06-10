@@ -1,0 +1,73 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Dojo Survey 2</h1>
+    <h3>(version w/Models)</h3>
+</div>
+<body>
+    <div class="container">
+        <div class="col-sm">
+            <div id="main_box">
+                <div class="card w-100">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="header">
+                                <h1>Survey Results</h1>
+                            </div>
+                        </div>
+                        <form action="/process" method="post">
+                            <div class="row">
+                                <div class="col-sm">
+                                    <div id="left_box">
+                                        <div class="form-group">
+                                            <div>
+                                                <label for="name">Your Name:</label>
+                                            </div>
+                                            <div>
+                                                <label for="location">Dojo Location:</label>
+                                            </div>
+                                            <div>
+                                                <label for="language">Favorite Language:</label>
+                                            </div>
+                                            <div>
+                                                <label for="comment">Comments:</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm">
+                                    <div id="right_box">
+                                        <div class="form-group">
+                                            <div class="fields">
+                                                <li>
+                                                    @Model.Name
+                                                </li>
+                                            </div>
+                                            <div class="fields">
+                                                <li>
+                                                    @Model.Location
+                                                </li>
+                                            </div>
+                                            <div class="fields">
+                                                <li>
+                                                    @Model.Language
+                                                </li>
+                                            </div>
+                                            <div class="fields">
+                                                <li>
+                                                    @Model.Comments
+                                                </li>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
